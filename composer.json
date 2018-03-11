@@ -1,0 +1,43 @@
+{
+    "name": "graham-campbell/github-notifications",
+    "description": "An interactive shell for modern PHP.",
+    "type": "application",
+    "keywords": ["github"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Graham Campbell",
+            "email": "graham@alt-three.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/GrahamCampbell/php-github-api"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "symfony/console": "^4.0",
+        "knplabs/github-api": "dev-patch-2",
+        "php-http/guzzle6-adapter": "1.1.*",
+        "guzzlehttp/guzzle": "6.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "GrahamCampbell\\GitHubNotifications\\": "src/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.1.3"
+        },
+        "preferred-install": "dist"
+    },
+    "bin": ["notifications"],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
