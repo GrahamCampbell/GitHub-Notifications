@@ -12,6 +12,11 @@ GitHub Notifications was created by, and is maintained by [Graham Campbell](http
 $ composer global require graham-campbell/github-notifications
 ```
 
+Alternatively, you can simply clone the repo and run `composer install` in the folder.
+
+
+## Authentication
+
 You'll also need to create yourself a [personal access token](https://github.com/settings/tokens) for GitHub's API with access to the `notifications` scope. 
 
 ## Usage
