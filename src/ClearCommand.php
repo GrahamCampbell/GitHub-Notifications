@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\GitHubNotifications;
 
+use Github\Client;
 use Github\ResultPager;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidOptionException;
@@ -24,7 +25,7 @@ class ClearCommand extends Command
         $this
             ->setName('clear')
             ->setDescription('Clear all issue notifications for a given organization')
-            ->addArgument('org', InputArgument::REQUIRED)
+            ->addArgument('orgs', InputArgument::IS_ARRAY, 'Specifies which organizations to clear.')
             ->addOption('token', null, InputOption::VALUE_OPTIONAL, 'Specifies the token to use.');
     }
 
@@ -39,18 +40,38 @@ class ClearCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $marked = 0;
-        $org = $input->getArgument('org');
-        $c = ClientFactory::make($this->resolveToken($input));
-        $n = $c->notifications();
+        $orgs = static::resolveOrgs($input);
+        $c = ClientFactory::make(static::resolveToken($input));
+        $n = $c->notification();
 
         foreach ((new ResultPager($c))->fetchAll($n, 'all') as $notification) {
-            if (explode('/', $notification['repository']['full_name'])[0] === $org && $notification['subject']['type'] === 'Issue') {
+            if (static::shouldMarkAsRead($c, $orgs, $notification)) {
                 $marked++;
                 $n->markThreadRead($notification['id']);
             }
         }
 
         $output->writeln("<comment>Marked {$marked} issue notifications as read.</comment>");
+    }
+
+    /**
+     * Resolve the organizations to clear.
+     *
+     * @param \Symfony\Component\Console\Input\InputInterface $input
+     *
+     * @throws \Symfony\Component\Console\Exception\InvalidOptionException
+     *
+     * @return string[]
+     */
+    protected static function resolveOrgs(InputInterface $input)
+    {
+        $orgs = $input->getArgument('orgs');
+
+        if (!$orgs) {
+            throw new InvalidOptionException('Please provide at least one organization.');
+        }
+
+        return $orgs;
     }
 
     /**
@@ -71,5 +92,51 @@ class ClearCommand extends Command
         }
 
         return $token;
+    }
+
+    /**
+     * Should the notification be marked as read?
+     *
+     * @param \Github\Client $c
+     * @param string[]       $orgs
+     * @param array          $notification
+     *
+     * @return bool
+     */
+    protected static function shouldMarkAsRead(Client $c, array $orgs, array $notification)
+    {
+        if (!in_array(explode('/', $notification['repository']['full_name'])[0], $orgs, true)) {
+            return false;
+        }
+
+        // don't care about any issues
+        if ($notification['subject']['type'] === 'Issue') {
+            return true;
+        }
+
+        // don't care about rejected PRs
+        if ($notification['subject']['type'] === 'PullRequest') {
+            $pr = $c->pr()->show(...static::extractPullRequestData($notification));
+            if ($pr['state'] !== 'open' && !$pr['merged']) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Extract the PR data from a PR notification.
+     *
+     * @param array $notification
+     *
+     * @return array
+     */
+    protected static function extractPullRequestData(array $notification)
+    {
+        $args = explode('/', $notification['repository']['full_name']);
+        $data = explode('/', $notification['subject']['url']);
+
+        return [$args[0], $args[1], (int) end($data)];
     }
 }
