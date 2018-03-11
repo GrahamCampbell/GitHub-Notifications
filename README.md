@@ -1,7 +1,7 @@
 GitHub Notifications
 ====================
 
-GitHub Notifications was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a simple command line tool to mark all issue notifications as read on a given organization. Feel free to check out the [releases](https://github.com/GrahamCampbell/GitHub-Notifications/releases) and [license](LICENSE.md).
+GitHub Notifications was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a simple command line tool to mark all notifications about issues or rejected PRs as read on a given organization. Feel free to check out the [releases](https://github.com/GrahamCampbell/GitHub-Notifications/releases) and [license](LICENSE.md).
 
 
 ## Installation
