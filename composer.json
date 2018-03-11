@@ -1,7 +1,7 @@
 {
     "name": "graham-campbell/github-notifications",
     "description": "An interactive shell for modern PHP.",
-    "type": "application",
+    "type": "project",
     "keywords": ["github"],
     "license": "MIT",
     "authors": [
