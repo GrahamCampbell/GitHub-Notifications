@@ -1,7 +1,14 @@
 GitHub Notifications
 ====================
 
-GitHub Notifications was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a simple command line tool to mark all notifications about issues or rejected PRs as read on a given organization. Feel free to check out the [releases](https://github.com/GrahamCampbell/GitHub-Notifications/releases) and [license](LICENSE.md).
+GitHub Notifications was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a simple command line tool to mark all notifications about issues or rejected PRs as read on a given organization. Feel free to check out the [license](LICENSE.md).
+
+![Banner](https://user-images.githubusercontent.com/2829600/71477091-0f3c7780-27e0-11ea-88f6-077601e11046.png)
+
+<p align="center">
+<a href="https://styleci.io/repos/124759574"><img src="https://styleci.io/repos/124759574/shield" alt="StyleCI Status"></img></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
+</p>
 
 
 ## Installation
