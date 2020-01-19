@@ -45,7 +45,7 @@ final class ClearCommand extends Command
      * @param \Symfony\Component\Console\Input\InputInterface   $input
      * @param \Symfony\Component\Console\Output\OutputInterface $output
      *
-     * @return void
+     * @return int
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -62,6 +62,8 @@ final class ClearCommand extends Command
         }
 
         $output->writeln("<comment>Marked {$marked} issue notifications as read.</comment>");
+
+        return 0;
     }
 
     /**
