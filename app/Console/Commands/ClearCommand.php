@@ -81,7 +81,7 @@ final class ClearCommand extends Command
             throw new InvalidOptionException('Please provide at least one organization.');
         }
 
-        return $orgs;
+        return (array) $orgs;
     }
 
     /**
@@ -95,13 +95,13 @@ final class ClearCommand extends Command
      */
     protected static function resolveToken(InputInterface $input)
     {
-        $token = $input->getOption('token') ?: getenv('GITHUB_TOKEN');
+        $token = $input->getOption('token') ?: ($_SERVER['GITHUB_TOKEN'] ?? null);
 
         if (!$token) {
             throw new InvalidOptionException('Unable to resolve the token to use.');
         }
 
-        return $token;
+        return (string) $token;
     }
 
     /**
