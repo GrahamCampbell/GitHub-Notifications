@@ -18,7 +18,7 @@ use GrahamCampbell\GitHubNotifications\ClientFactory;
 use PHPUnit\Framework\TestCase;
 use TypeError;
 
-class ClientTest extends TestCase
+class ClientFactoryTest extends TestCase
 {
     public function testCanBeInstantiated()
     {
