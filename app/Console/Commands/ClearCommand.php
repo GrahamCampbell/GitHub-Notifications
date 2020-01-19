@@ -50,12 +50,12 @@ final class ClearCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $marked = 0;
-        $orgs = static::resolveOrgs($input);
-        $c = ClientFactory::make(static::resolveToken($input));
+        $orgs = self::resolveOrgs($input);
+        $c = ClientFactory::make(self::resolveToken($input));
         $n = $c->notification();
 
         foreach ((new ResultPager($c))->fetchAll($n, 'all') as $notification) {
-            if (static::shouldMarkAsRead($c, $orgs, $notification)) {
+            if (self::shouldMarkAsRead($c, $orgs, $notification)) {
                 $marked++;
                 $n->markThreadRead($notification['id']);
             }
@@ -75,7 +75,7 @@ final class ClearCommand extends Command
      *
      * @return string[]
      */
-    protected static function resolveOrgs(InputInterface $input)
+    private static function resolveOrgs(InputInterface $input)
     {
         $orgs = $input->getArgument('orgs');
 
@@ -95,7 +95,7 @@ final class ClearCommand extends Command
      *
      * @return string
      */
-    protected static function resolveToken(InputInterface $input)
+    private static function resolveToken(InputInterface $input)
     {
         $token = $input->getOption('token') ?: ($_SERVER['GITHUB_TOKEN'] ?? null);
 
@@ -115,7 +115,7 @@ final class ClearCommand extends Command
      *
      * @return bool
      */
-    protected static function shouldMarkAsRead(Client $c, array $orgs, array $notification)
+    private static function shouldMarkAsRead(Client $c, array $orgs, array $notification)
     {
         if (!in_array(explode('/', $notification['repository']['full_name'])[0], $orgs, true)) {
             return false;
@@ -128,7 +128,7 @@ final class ClearCommand extends Command
 
         // don't care about rejected PRs
         if ($notification['subject']['type'] === 'PullRequest') {
-            $pr = $c->pr()->show(...static::extractPullRequestData($notification));
+            $pr = $c->pr()->show(...self::extractPullRequestData($notification));
             if ($pr['state'] !== 'open' && !$pr['merged']) {
                 return true;
             }
@@ -144,7 +144,7 @@ final class ClearCommand extends Command
      *
      * @return array
      */
-    protected static function extractPullRequestData(array $notification)
+    private static function extractPullRequestData(array $notification)
     {
         $args = explode('/', $notification['repository']['full_name']);
         $data = explode('/', $notification['subject']['url']);
