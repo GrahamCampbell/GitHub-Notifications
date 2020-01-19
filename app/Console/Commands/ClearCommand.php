@@ -11,10 +11,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\GitHubNotifications;
+namespace GrahamCampbell\GitHubNotifications\Console\Commands;
 
 use Github\Client;
 use Github\ResultPager;
+use GrahamCampbell\GitHubNotifications\ClientFactory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidOptionException;
 use Symfony\Component\Console\Input\InputArgument;
@@ -22,7 +23,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ClearCommand extends Command
+final class ClearCommand extends Command
 {
     /**
      * Configure the command options.

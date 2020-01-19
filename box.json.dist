@@ -1,0 +1,4 @@
+{
+    "compression": "GZ",
+    "main": "bin/notifications"
+}

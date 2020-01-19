@@ -17,7 +17,7 @@ use Github\Client;
 use Github\HttpClient\Builder;
 use Http\Client\Common\Plugin\RetryPlugin;
 
-class ClientFactory
+final class ClientFactory
 {
     /**
      * Make a new github notifications nclient.

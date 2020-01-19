@@ -1,19 +1,22 @@
 GitHub Notifications
 ====================
 
-GitHub Notifications was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a simple command line tool to mark all notifications about issues or rejected PRs as read on a given organization. Feel free to check out the [license](LICENSE.md).
+GitHub Notifications was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a simple command line tool to mark all notifications about issues or rejected PRs as read on a given organization. Feel free to check out the [releases](https://github.com/GrahamCampbell/GitHub-Notifications/releases), [security policy](https://github.com/GrahamCampbell/GitHub-Notifications/security/policy), [license](LICENSE), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
 
 ![Banner](https://user-images.githubusercontent.com/2829600/71477091-0f3c7780-27e0-11ea-88f6-077601e11046.png)
 
 <p align="center">
 <a href="https://styleci.io/repos/124759574"><img src="https://styleci.io/repos/124759574/shield" alt="StyleCI Status"></img></a>
+<a href="https://travis-ci.org/GrahamCampbell/GitHub-Notifications"><img src="https://img.shields.io/travis/GrahamCampbell/GitHub-Notifications/master.svg?style=flat-square" alt="Build Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/GitHub-Notifications"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/GitHub-Notifications.svg?style=flat-square" alt="Quality Score"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
+<a href="https://github.com/GrahamCampbell/GitHub-Notifications/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/GitHub-Notifications.svg?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
 
 ## Installation
 
-[PHP](https://php.net) 7.1.3+ is required. To get the latest version, simply require the project using [Composer](https://getcomposer.org):
+[PHP](https://php.net) 7.2+ is required. To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer global require graham-campbell/github-notifications
@@ -40,6 +43,17 @@ Or, if you are specifying a token:
 
 ```bash
 $ notifications clear laravel --token {...}
+```
+
+
+## Building
+
+The following documentation is for contributors to this package only.
+
+To build the `phar` file, run:
+
+```bash
+$ docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint vendor/bin/box --rm registry.gitlab.com/grahamcampbell/php:7.4-base compile
 ```
 
 

@@ -2,7 +2,7 @@
     "name": "graham-campbell/github-notifications",
     "description": "Reduce your notification burden on GitHub!",
     "type": "project",
-    "keywords": ["github"],
+    "keywords": ["github", "notifications", "notify", "GitHubNotifications", "GitHub Notifications", "GitHub-Notifications", "Graham Campbell", "GrahamCampbell"],
     "license": "MIT",
     "authors": [
         {
@@ -11,27 +11,41 @@
         }
     ],
     "require": {
-        "php": "^7.1.3",
-        "symfony/console": "^4.0",
-        "knplabs/github-api": "2.11.*",
-        "php-http/guzzle6-adapter": "1.1.*",
-        "guzzlehttp/guzzle": "6.3.*"
+        "php": "^7.2.5",
+        "composer/xdebug-handler": "^1.2",
+        "guzzlehttp/guzzle": "^6.3",
+        "knplabs/github-api": "^2.11",
+        "php-http/guzzle6-adapter": "^1.1|^2.0",
+        "symfony/console": "^4.3.8|^5.0",
+        "symfony/error-handler": "^4.4|^5.0"
+    },
+    "require-dev": {
+        "graham-campbell/analyzer": "^2.4.1",
+        "humbug/box": "^3.8.4",
+        "phpunit/phpunit": "^8.5.2"
     },
     "autoload": {
         "psr-4": {
-            "GrahamCampbell\\GitHubNotifications\\": "src/"
+            "GrahamCampbell\\GitHubNotifications\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GrahamCampbell\\Tests\\GitHubNotifications\\": "tests/"
         }
     },
     "config": {
         "platform": {
-            "php": "7.1.3"
+            "php": "7.2.5"
         },
         "preferred-install": "dist"
     },
-    "bin": ["notifications"],
     "extra": {
+        "bin-dir": "bin",
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "2.0-dev"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
