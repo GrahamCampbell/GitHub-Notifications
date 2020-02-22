@@ -1,0 +1,28 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 4 * * 1'
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php: [7.2, 7.3, 7.4]
+        laravel: [6, 7]
+
+    name: PHP ${{ matrix.php }}; Laravel ${{ matrix.laravel }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Pull Docker Image
+      run: docker pull registry.gitlab.com/grahamcampbell/php:${{ matrix.php }}
+    - name: Run Composer
+      run: docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} install --no-suggest --prefer-dist -n -o
+    - name: Run PHPUnit
+      run: docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint vendor/bin/phpunit registry.gitlab.com/grahamcampbell/php:${{ matrix.php }}
