@@ -5,9 +5,8 @@ GitHub Notifications was created by, and is maintained by [Graham Campbell](http
 
 ![Banner](https://user-images.githubusercontent.com/2829600/71477091-0f3c7780-27e0-11ea-88f6-077601e11046.png)
 
-<p align="center">
+<a href="https://github.com/GrahamCampbell/GitHub-Notifications/actions?query=workflow%3ATests"><img src="https://github.com/GrahamCampbell/GitHub-Notifications/workflows/Tests/badge.svg" alt="Build Status"></img></a>
 <a href="https://styleci.io/repos/124759574"><img src="https://styleci.io/repos/124759574/shield" alt="StyleCI Status"></img></a>
-<a href="https://travis-ci.org/GrahamCampbell/GitHub-Notifications"><img src="https://img.shields.io/travis/GrahamCampbell/GitHub-Notifications/master.svg?style=flat-square" alt="Build Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/GitHub-Notifications"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/GitHub-Notifications.svg?style=flat-square" alt="Quality Score"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
 <a href="https://github.com/GrahamCampbell/GitHub-Notifications/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/GitHub-Notifications.svg?style=flat-square" alt="Latest Version"></img></a>
