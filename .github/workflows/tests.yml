@@ -14,9 +14,8 @@ jobs:
     strategy:
       matrix:
         php: [7.2, 7.3, 7.4]
-        laravel: [6, 7]
 
-    name: PHP ${{ matrix.php }}; Laravel ${{ matrix.laravel }}
+    name: PHP ${{ matrix.php }}
 
     steps:
     - uses: actions/checkout@v2
