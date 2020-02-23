@@ -8,4 +8,4 @@ phpunit:
 	@rm -f bootstrap/cache/*.php && docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint vendor/bin/phpunit --rm registry.gitlab.com/grahamcampbell/php:7.4-base
 
 box-compile:
-	@docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint vendor/bin/box --rm registry.gitlab.com/grahamcampbell/php:7.4-base compile
+	@docker run -it -w /data -v ${PWD}:/data:delegated --rm registry.gitlab.com/grahamcampbell/box:3.8 compile
