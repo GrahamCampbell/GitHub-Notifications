@@ -10,8 +10,16 @@
             "email": "graham@alt-three.com"
         }
     ],
+    "replace": {
+        "paragonie/random_compat": "*",
+        "symfony/polyfill-php56": "*",
+        "symfony/polyfill-php70": "*",
+        "symfony/polyfill-php71": "*",
+        "symfony/polyfill-php72": "*"
+    },
     "require": {
         "php": "^7.2.5",
+        "ext-json": "*",
         "composer/xdebug-handler": "^1.2",
         "guzzlehttp/guzzle": "^6.3",
         "knplabs/github-api": "^2.11",
