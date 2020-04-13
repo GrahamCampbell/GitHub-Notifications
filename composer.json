@@ -41,6 +41,9 @@
             "GrahamCampbell\\Tests\\GitHubNotifications\\": "tests/"
         }
     },
+    "bin": [
+        "bin/notifications"
+    ],
     "config": {
         "platform": {
             "php": "7.2.5"
