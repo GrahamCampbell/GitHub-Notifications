@@ -9,7 +9,6 @@ GitHub Notifications was created by, and is maintained by [Graham Campbell](http
 <a href="https://github.com/GrahamCampbell/GitHub-Notifications/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/GitHub-Notifications/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/124759574"><img src="https://github.styleci.io/repos/124759574/shield" alt="StyleCI Status"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
-<a href="https://packagist.org/packages/graham-campbell/github-notifications"><img src="https://img.shields.io/packagist/dt/graham-campbell/github-notifications?style=flat-square" alt="Packagist Downloads"></img></a>
 <a href="https://github.com/GrahamCampbell/GitHub-Notifications/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/GitHub-Notifications?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
