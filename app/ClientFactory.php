@@ -34,7 +34,7 @@ final class ClientFactory
 
         $client = new Client($builder);
 
-        $client->authenticate($token, 'http_token');
+        $client->authenticate($token, Client::AUTH_ACCESS_TOKEN);
 
         return $client;
     }
