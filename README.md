@@ -6,10 +6,6 @@ GitHub Notifications was created by, and is maintained by [Graham Campbell](http
 ![Banner](https://user-images.githubusercontent.com/2829600/71477091-0f3c7780-27e0-11ea-88f6-077601e11046.png)
 
 <p align="center">
-<a href="https://xscode.com/grahamcampbell/GitHub-Notifications"><img src="https://xscode.com/assets/promo-banner.svg" alt="Promo Banner"></img></a>
-</p>
-
-<p align="center">
 <a href="https://github.com/GrahamCampbell/GitHub-Notifications/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/GitHub-Notifications/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/124759574"><img src="https://github.styleci.io/repos/124759574/shield" alt="StyleCI Status"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
@@ -19,7 +15,7 @@ GitHub Notifications was created by, and is maintained by [Graham Campbell](http
 
 ## Installation
 
-[PHP](https://php.net) 7.2-8.0 is required. To get the latest version, simply require the project using [Composer](https://getcomposer.org):
+[PHP](https://php.net) 7.2-8.1 is required. To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer global require "graham-campbell/github-notifications:^3.0"
@@ -63,7 +59,7 @@ $ make box-compiler
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an email to security@tidelift.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/GitHub-Notifications/security/policy).
 
 
 ## License
