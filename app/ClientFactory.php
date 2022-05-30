@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\GitHubNotifications;
 
-use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\Psr7\HttpFactory as GuzzlePsrFactory;
 use Github\Client;
 use Github\HttpClient\Builder;
+use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Psr7\HttpFactory as GuzzlePsrFactory;
 use Http\Client\Common\Plugin\RetryPlugin;
 
 final class ClientFactory
