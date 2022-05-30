@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\GitHubNotifications;
 
+use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Psr7\HttpFactory as GuzzlePsrFactory;
 use Github\Client;
 use Github\HttpClient\Builder;
 use Http\Client\Common\Plugin\RetryPlugin;
@@ -28,7 +30,10 @@ final class ClientFactory
      */
     public static function make(string $token)
     {
-        $builder = new Builder();
+        $httpClient = new GuzzleClient(['connect_timeout' => 10, 'timeout' => 30]);
+        $psrFactory = new GuzzlePsrFactory();
+
+        $builder = new Builder($httpClient, $psrFactory, $psrFactory);
 
         $builder->addPlugin(new RetryPlugin(['retries' => 2]));
 
