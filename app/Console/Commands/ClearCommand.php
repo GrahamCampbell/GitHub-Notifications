@@ -30,7 +30,7 @@ final class ClearCommand extends Command
      *
      * @return void
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('clear')
@@ -47,7 +47,7 @@ final class ClearCommand extends Command
      *
      * @return int
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $marked = 0;
         $orgs = self::resolveOrgs($input);
@@ -75,7 +75,7 @@ final class ClearCommand extends Command
      *
      * @return string[]
      */
-    private static function resolveOrgs(InputInterface $input)
+    private static function resolveOrgs(InputInterface $input): array
     {
         $orgs = $input->getArgument('orgs');
 
@@ -95,7 +95,7 @@ final class ClearCommand extends Command
      *
      * @return string
      */
-    private static function resolveToken(InputInterface $input)
+    private static function resolveToken(InputInterface $input): string
     {
         $token = $input->getOption('token') ?: ($_SERVER['GITHUB_TOKEN'] ?? null);
 
@@ -115,7 +115,7 @@ final class ClearCommand extends Command
      *
      * @return bool
      */
-    private static function shouldMarkAsRead(Client $c, array $orgs, array $notification)
+    private static function shouldMarkAsRead(Client $c, array $orgs, array $notification): bool
     {
         if (!in_array(explode('/', $notification['repository']['full_name'])[0], $orgs, true)) {
             return false;
@@ -144,7 +144,7 @@ final class ClearCommand extends Command
      *
      * @return array
      */
-    private static function extractPullRequestData(array $notification)
+    private static function extractPullRequestData(array $notification): array
     {
         $args = explode('/', $notification['repository']['full_name']);
         $data = explode('/', $notification['subject']['url']);

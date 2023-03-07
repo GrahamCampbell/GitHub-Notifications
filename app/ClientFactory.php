@@ -28,7 +28,7 @@ final class ClientFactory
      *
      * @return \Github\Client
      */
-    public static function make(string $token)
+    public static function make(string $token): Client
     {
         $httpClient = new GuzzleClient(['connect_timeout' => 10, 'timeout' => 30]);
         $psrFactory = new GuzzlePsrFactory();

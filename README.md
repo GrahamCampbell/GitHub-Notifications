@@ -6,7 +6,7 @@ GitHub Notifications was created by, and is maintained by [Graham Campbell](http
 ![Banner](https://user-images.githubusercontent.com/2829600/71477091-0f3c7780-27e0-11ea-88f6-077601e11046.png)
 
 <p align="center">
-<a href="https://github.com/GrahamCampbell/GitHub-Notifications/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/GitHub-Notifications/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
+<a href="https://github.com/GrahamCampbell/GitHub-Notifications/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/actions/workflow/status/GrahamCampbell/GitHub-Notifications/tests.yml?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/124759574"><img src="https://github.styleci.io/repos/124759574/shield" alt="StyleCI Status"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
 <a href="https://github.com/GrahamCampbell/GitHub-Notifications/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/GitHub-Notifications?style=flat-square" alt="Latest Version"></img></a>
@@ -15,7 +15,7 @@ GitHub Notifications was created by, and is maintained by [Graham Campbell](http
 
 ## Installation
 
-[PHP](https://www.php.net/) 7.2-8.1 is required. To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
+[PHP](https://www.php.net/) 7.4-8.2 is required. To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
 
 ```bash
 $ composer global require "graham-campbell/github-notifications:^3.0"

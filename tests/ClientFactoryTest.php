@@ -22,7 +22,7 @@ class ClientFactoryTest extends TestCase
 {
     public function testCanBeInstantiated()
     {
-        $this->assertInstanceOf(Client::class, ClientFactory::make('qwertyuiop'));
+        self::assertInstanceOf(Client::class, ClientFactory::make('qwertyuiop'));
     }
 
     public function testInstantiationRequiresParam()
