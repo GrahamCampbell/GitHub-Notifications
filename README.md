@@ -18,7 +18,7 @@ GitHub Notifications was created by, and is maintained by [Graham Campbell](http
 [PHP](https://www.php.net/) 7.4-8.3 is required. To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
 
 ```bash
-$ composer global require "graham-campbell/github-notifications:^3.1"
+$ composer global require "graham-campbell/github-notifications:^4.1"
 ```
 
 Alternatively, you can simply clone the repo and run `composer install` in the folder.
